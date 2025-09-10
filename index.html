@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nama Perusahaan Anda</title>
+    <title>Transenden Cipta Solusindo - Solusi Teknologi Terdepan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Gaya dasar */
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --accent: #1abc9c;
+            --light: #ecf0f1;
+            --text: #333333;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--white);
+            overflow-x: hidden;
         }
         
         .container {
@@ -21,101 +38,274 @@
             margin: 0 auto;
         }
         
-        /* Header */
+        /* Header Styles */
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 15px 0;
+            background: var(--white);
+            color: var(--secondary);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
         }
         
         nav ul {
-            list-style: none;
-            padding: 0;
             display: flex;
-            margin: 10px 0 0 0;
+            list-style: none;
         }
         
         nav ul li {
-            margin-right: 20px;
+            margin-left: 25px;
         }
         
         nav ul li a {
+            color: var(--secondary);
             text-decoration: none;
-            color: #333;
             font-weight: 500;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-btn {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://placehold.it/1200x600') no-repeat center center/cover;
+            background: var(--gradient);
             color: white;
-            text-align: center;
-            padding: 80px 20px;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
         }
         
-        .hero h1 {
-            font-size: 2.5rem;
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding-right: 30px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
         
-        .hero p {
+        .hero-text p {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
         .btn {
             display: inline-block;
-            background: #e74c3c;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
+            background: var(--white);
+            color: var(--primary);
+            padding: 14px 30px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         
-        /* Produk */
-        .products {
-            padding: 60px 0;
-            background: white;
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: var(--white);
         }
         
         .section-title {
             text-align: center;
+            margin-bottom: 50px;
+            color: var(--secondary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 30px;
+            color: var(--white);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .product-filters {
+            display: flex;
+            justify-content: center;
             margin-bottom: 40px;
-            color: #2c3e50;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: var(--white);
+            color: var(--text);
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gradient);
+            color: var(--white);
         }
         
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
         
         .product-card {
-            background: white;
-            border-radius: 8px;
+            background: var(--white);
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
+            position: relative;
         }
         
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
         }
         
         .product-img {
             height: 200px;
-            background-color: #f1f1f1;
+            background-color: #e3f2fd;
             background-position: center;
             background-size: cover;
         }
@@ -126,46 +316,235 @@
         
         .product-info h3 {
             margin-top: 0;
+            color: var(--secondary);
+            font-size: 20px;
+        }
+        
+        .product-info p {
+            color: #666;
+            margin: 10px 0;
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .product-cta {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .product-cta:hover {
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .author-details h4 {
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .author-details p {
+            color: var(--primary);
+            font-size: 14px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
         }
         
         /* Footer */
         footer {
-            background: #2c3e50;
-            color: white;
-            padding: 40px 0 20px;
-            text-align: center;
+            background: var(--secondary);
+            color: var(--light);
+            padding: 60px 0 20px;
         }
         
         .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
         
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--white);
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .footer-links h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
         }
         
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
         }
         
-        /* Responsif */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
             }
             
             nav ul {
-                flex-direction: column;
+                display: none;
             }
             
-            nav ul li {
-                margin: 5px 0;
+            .mobile-menu-btn {
+                display: block;
+                font-size: 24px;
+                background: none;
+                border: none;
+                color: var(--secondary);
+                cursor: pointer;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
             }
         }
     </style>
@@ -174,119 +553,289 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="logo">Trasenden Cipta Solusindo</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#products">Produk</a></li>
-                    <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>Transenden Cipta Solusindo</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#products">Produk</a></li>
+                        <li><a href="#solutions">Solusi</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </nav>
+                <a href="#contact" class="nav-btn">Hubungi Kami</a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>Solusi Terbaik untuk Kebutuhan Anda</h1>
-            <p>Kami menyediakan produk-produk berkualitas tinggi dengan pelayanan terbaik untuk semua pelanggan kami.</p>
-            <a href="#products" class="btn">Lihat Produk</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Solusi Teknologi Inovatif untuk Masa Depan Bisnis Anda</h1>
+                    <p>Kami menyediakan layanan dan produk teknologi terkini yang membantu bisnis Anda tumbuh dan berkembang di era digital.</p>
+                    <div>
+                        <a href="#products" class="btn">Jelajahi Produk</a>
+                        <a href="#contact" class="btn btn-outline">Konsultasi Gratis</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Technology Solutions">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mengapa Memilih Kami</h2>
+                <p>Kami memberikan solusi teknologi terbaik dengan layanan yang lengkap dan profesional</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Inovatif</h3>
+                    <p>Selalu mengembangkan solusi terkini untuk memenuhi kebutuhan bisnis modern</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Aman dan Terpercaya</h3>
+                    <p>Keamanan data dan sistem adalah prioritas utama dalam setiap solusi kami</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Dukungan 24/7</h3>
+                    <p>Tim support kami siap membantu kapanpun Anda membutuhkan bantuan</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
-            <h2 class="section-title">Produk Kami</h2>
+            <div class="section-title">
+                <h2>Produk Kami</h2>
+                <p>Berbagai solusi teknologi untuk mendukung kesuksesan bisnis Anda</p>
+            </div>
+            
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">Semua Produk</button>
+                <button class="filter-btn" data-filter="software">Software</button>
+                <button class="filter-btn" data-filter="api">API Solutions</button>
+                <button class="filter-btn" data-filter="cloud">Cloud Services</button>
+            </div>
+            
             <div class="product-grid">
                 <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://placehold.it/300x200');"></div>
+                <div class="product-card" data-category="software">
+                    <div class="product-badge">Populer</div>
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80');"></div>
                     <div class="product-info">
-                        <h3>Nama Produk 1</h3>
-                        <p>Deskripsi singkat produk. Dapat ditulis beberapa kalimat untuk menjelaskan produk.</p>
-                        <p class="price">Rp 500.000</p>
+                        <h3>Sistem Verifikasi TCS</h3>
+                        <p>Platform verifikasi identitas digital dengan teknologi AI terbaru</p>
+                        <div class="product-price">Rp 2.500.000/bulan</div>
+                        <a href="#contact" class="product-cta">Detail Produk</a>
                     </div>
                 </div>
                 
                 <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://placehold.it/300x200');"></div>
+                <div class="product-card" data-category="api">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80');"></div>
                     <div class="product-info">
-                        <h3>Nama Produk 2</h3>
-                        <p>Deskripsi singkat produk. Dapat ditulis beberapa kalimat untuk menjelaskan produk.</p>
-                        <p class="price">Rp 750.000</p>
+                        <h3>TCS API Gateway</h3>
+                        <p>Integrasi API yang aman dan scalable untuk developer</p>
+                        <div class="product-price">Rp 1.800.000/bulan</div>
+                        <a href="#contact" class="product-cta">Detail Produk</a>
                     </div>
                 </div>
                 
                 <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://placehold.it/300x200');"></div>
+                <div class="product-card" data-category="cloud">
+                    <div class="product-badge">Baru</div>
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80');"></div>
                     <div class="product-info">
-                        <h3>Nama Produk 3</h3>
-                        <p>Deskripsi singkat produk. Dapat ditulis beberapa kalimat untuk menjelaskan produk.</p>
-                        <p class="price">Rp 900.000</p>
+                        <h3>TCS Cloud Enterprise</h3>
+                        <p>Layanan cloud enterprise dengan keamanan tingkat tinggi</p>
+                        <div class="product-price">Rp 4.500.000/bulan</div>
+                        <a href="#contact" class="product-cta">Detail Produk</a>
                     </div>
                 </div>
                 
                 <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://placehold.it/300x200');"></div>
+                <div class="product-card" data-category="software">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80');"></div>
                     <div class="product-info">
-                        <h3>Nama Produk 4</h3>
-                        <p>Deskripsi singkat produk. Dapat ditulis beberapa kalimat untuk menjelaskan produk.</p>
-                        <p class="price">Rp 1.200.000</p>
+                        <h3>TCS Analytics Pro</h3>
+                        <p>Analisis data bisnis secara real-time dengan dashboard interaktif</p>
+                        <div class="product-price">Rp 3.200.000/bulan</div>
+                        <a href="#contact" class="product-cta">Detail Produk</a>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card" data-category="api">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="product-info">
+                        <h3>Payment Gateway API</h3>
+                        <p>Integrasi pembayaran yang aman untuk e-commerce dan bisnis online</p>
+                        <div class="product-price">Rp 2.100.000/bulan</div>
+                        <a href="#contact" class="product-cta">Detail Produk</a>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card" data-category="cloud">
+                    <div class="product-badge">Diskon 20%</div>
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="product-info">
+                        <h3>TCS Backup Solution</h3>
+                        <p>Layanan backup data otomatis dengan enkripsi end-to-end</p>
+                        <div class="product-price">Rp 1.500.000/bulan</div>
+                        <a href="#contact" class="product-cta">Detail Produk</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" style="padding: 60px 0; background: #f1f1f1;">
+    <!-- Testimonials Section -->
+    <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">Tentang Kami</h2>
-            <p style="max-width: 800px; margin: 0 auto; text-align: center;">
-                Perusahaan kami didirikan dengan visi untuk menyediakan produk-produk berkualitas tinggi dengan harga terjangkau. 
-                Dengan pengalaman lebih dari 5 tahun di industri ini, kami telah melayani ratusan pelanggan dengan berbagai kebutuhan.
-                Komitmen kami adalah memberikan pelayanan terbaik dan solusi inovatif untuk semua klien kami.
-            </p>
+            <div class="section-title">
+                <h2>Apa Kata Klien Kami</h2>
+                <p>Testimoni dari berbagai perusahaan yang telah menggunakan layanan kami</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Layanan dari Transenden Cipta Solusindo sangat membantu perusahaan kami dalam transformasi digital. Sistem verifikasi mereka sangat akurat dan mudah diintegrasikan."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AR</div>
+                        <div class="author-details">
+                            <h4>Ahmad Rizky</h4>
+                            <p>CTO, FinTech Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "API Gateway dari TCS sangat stabil dan dokumentasinya lengkap. Tim supportnya juga sangat responsif membantu tim developer kami."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SD</div>
+                        <div class="author-details">
+                            <h4>Sari Dewi</h4>
+                            <p>Lead Developer, E-Commerce Platform</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Sejak menggunakan TCS Cloud Enterprise, sistem kami menjadi lebih stabil dan scalable. Biaya operasional juga jadi lebih efisien."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TJ</div>
+                        <div class="author-details">
+                            <h4>Thomas Jaya</h4>
+                            <p>IT Manager, Retail Group</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" style="padding: 60px 0;">
+    <!-- CTA Section -->
+    <section class="cta">
         <div class="container">
-            <h2 class="section-title">Hubungi Kami</h2>
-            <div style="max-width: 600px; margin: 0 auto;">
-                <p style="text-align: center;">Email: info@perusahaan.com</p>
-                <p style="text-align: center;">Telepon: (021) 1234-5678</p>
-                <p style="text-align: center;">Alamat: Jl. Contoh No. 123, Jakarta Selatan, Indonesia</p>
-            </div>
+            <h2>Siap Mengoptimalkan Bisnis Anda?</h2>
+            <p>Hubungi kami sekarang untuk konsultasi gratis dan demo produk</p>
+            <a href="#contact" class="btn btn-outline">Hubungi Kami</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Perusahaan</h3>
-                    <p>Menyediakan solusi terbaik untuk kebutuhan Anda dengan produk-produk berkualitas tinggi.</p>
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>Transenden Cipta Solusindo</span>
+                    </div>
+                    <p>Kami menyediakan solusi teknologi inovatif untuk membantu bisnis Anda tumbuh dan berkembang di era digital.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Link Cepat</h3>
-                    <p><a href="#home" style="color: white;">Beranda</a></p>
-                    <p><a href="#products" style="color: white;">Produk</a></p>
-                    <p><a href="#about" style="color: white;">Tentang Kami</a></p>
-                    <p><a href="#contact" style="color: white;">Kontak</a></p>
+                <div class="footer-links">
+                    <h3>Perusahaan</h3>
+                    <ul>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#products">Produk & Layanan</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Hubungi Kami</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Teknologi No. 123, Jakarta</li>
+                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
+                        <li><i class="fas fa-envelope"></i> info@transendencipta.com</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Nama Perusahaan. All rights reserved.</p>
+                <p>&copy; 2023 Transenden Cipta Solusindo. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Simple filter functionality for products
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    productCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
